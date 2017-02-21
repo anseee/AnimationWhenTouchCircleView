@@ -26,7 +26,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchButton(_ sender: Any) {
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.duration = 0.2;
+        scaleAnimation.autoreverses = true;
+        scaleAnimation.fromValue = 1.0
+        scaleAnimation.toValue = 0.9
         
+        self.circleButton.layer.add(scaleAnimation, forKey: "transform.scale")
     }
     
 }
